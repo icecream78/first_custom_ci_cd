@@ -1,0 +1,36 @@
+kind: pipeline
+name: default
+
+clone:
+  depth: 50
+
+steps:
+  - name: publish
+    image: plugins/docker
+    settings:
+      file: Dockerfile
+      registry: 192.168.50.5
+      insecure: true
+      repo: 192.168.50.5/deploy
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+
+  # - name: pull on server
+  #   image: appleboy/drone-ssh
+  #   settings:
+  #     host: 192.168.50.5
+  #     username:
+  #       from_secret: ssh_username
+  #     key:
+  #       from_secret: ssh_key
+  #     script:
+  #       - whoami
+  #       - docker pull 192.168.50.5/deploy
+
+  # - name: notify
+  #   image: appleboy/drone-telegram
+  #   settings:
+  #     token: 818734516:AAG-Y--OaOeZeML6blEgLlHwZFmO3gQ3bYY
+  #     to: 278122002

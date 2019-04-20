@@ -1,0 +1,17 @@
+---
+- hosts: dev_group
+  become: true
+  gather_facts: true
+  pre_tasks:
+    - name: login to registry
+      docker_login:
+        registry: 192.168.50.5
+        username: faker
+        password: fakerpassword
+        email: faker@mail.ru
+  tasks:
+    - name: create first deploy=)
+      docker_container:
+        name: hello_world
+        image: 192.168.50.5/drone_ci_app
+        restart: yes

@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+    - name: list files in folder
+      command: ls
+    - name: find disk space available.
+      command: df -hPT
