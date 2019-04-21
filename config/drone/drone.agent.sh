@@ -1,3 +1,5 @@
+#!/bin/sh
+
 docker run \
   --volume=/var/run/docker.sock:/var/run/docker.sock \
   --env=DRONE_RPC_SERVER=http://192.168.50.5:8000 \
