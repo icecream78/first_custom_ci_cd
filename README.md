@@ -9,7 +9,7 @@ https://fogflow.readthedocs.io/en/latest/registry.html
 Очень важная инфа по пулингу образов в drone из приватных реестров
 https://discourse.drone.io/t/how-to-pull-private-images-with-1-0/3155
 
-В дроне необходимо прописать переменные docker_username/docker_password для паблиша в локальный регистри в деплое, ansible_private_key с содержимым из файла ansible_ssh_key.
+В дроне необходимо прописать переменные docker_username(faker)/docker_password(fakerpassword) для паблиша в локальный регистри в деплое, ansible_private_key с содержимым из файла ansible_ssh_key.
 Для пуллинга из приватных репозиторий необходимо указать переменную dockerconfigjson с содержимым из файла.
 
 Генерация серта для https
